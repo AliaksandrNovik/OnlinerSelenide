@@ -25,9 +25,14 @@ public class OnlinerTest {
         bikePage = navigateToBikePage();
     }
 
+    @Test
+    public void test01GetListOfBrandsFromSideBarProducer() {
+        bikePage.getListBikeBrands().getTexts();
+    }
+
     @Test(groups = "debug")
-    public void test01getListOfBrandsFromSideBarProducer() {
-        bikePage.
+    public void test02GetListOfBikesTitles() {
+        bikePage.getListOfBikeTitles();
     }
 
     private BikePage navigateToBikePage() {
