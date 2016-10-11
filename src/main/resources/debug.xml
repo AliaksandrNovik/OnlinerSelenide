@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Onliner debug Suite">
+	<test name="Onlener Debug Tests">
+		<groups>
+			<run>
+				<include name="debug" />
+			</run>
+		</groups>
+	<packages>
+		<package name = "by.rfe.novik.onliner.tests.*"> </package>
+	</packages>
+	</test>
+</suite>
