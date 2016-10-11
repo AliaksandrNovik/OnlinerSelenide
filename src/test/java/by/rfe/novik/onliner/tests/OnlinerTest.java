@@ -30,9 +30,14 @@ public class OnlinerTest {
         bikePage.getListBikeBrands().getTexts();
     }
 
-    @Test(groups = "debug")
+    @Test
     public void test02GetListOfBikesTitles() {
         bikePage.getListOfBikeTitles();
+    }
+
+    @Test
+    public void test03SetPriceAndCheckThatBikesAreNotExistedOnPage() {
+
     }
 
     private BikePage navigateToBikePage() {
