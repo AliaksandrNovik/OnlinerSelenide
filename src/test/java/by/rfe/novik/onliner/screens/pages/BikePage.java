@@ -1,4 +1,4 @@
-package by.rfe.novik.onliner.screens.catalog;
+package by.rfe.novik.onliner.screens.pages;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -13,7 +13,7 @@ import org.testng.TestException;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-public class BikePage {
+public class BikePage extends CatalogPage{
 
     private static final Logger LOGGER = Logger.getLogger(BikePage.class);
 
@@ -41,7 +41,7 @@ public class BikePage {
     }
 
     public void setPrice(final String priceForBikes) {
-        LOGGER.info("Set value: " + priceForBikes + " in price input");
+        LOGGER.info("Set value: " + priceForBikes + " in Price input");
         inputPriceFrom.setValue(priceForBikes);
     }
 
