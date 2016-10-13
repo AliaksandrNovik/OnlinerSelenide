@@ -13,18 +13,18 @@ import com.codeborne.selenide.SelenideElement;
 public class CatalogPage {
 
 	private static final Logger LOGGER = Logger.getLogger(CatalogPage.class);
-	
+
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Красота ')]")
-    private SelenideElement beautyAndSportLink;
-	
+	private SelenideElement beautyAndSportLink;
+
 	@FindBy(how = How.CSS, using = "div.catalog-navigation-list__wrapper")
 	private BeautyAndSportWidget beautyAndSportWidget;
-	
-    public BikePage openBikePage() {
-        LOGGER.info("Opening BeautyAndSport Page ...");
-        beautyAndSportLink.click();
-        beautyAndSportWidget.openBikePage();
-        return page(BikePage.class);
-    }
+
+	public BikePage openBikePage() {
+		LOGGER.info("Opening BeautyAndSport Page ...");
+		beautyAndSportLink.click();
+		beautyAndSportWidget.openBikePage();
+		return page(BikePage.class);
+	}
 
 }
