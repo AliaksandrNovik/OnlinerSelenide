@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Onliner parallel tests"   parallel="tests" thread-count="3" >
+   
+    <test name="Bikes Brands tests">
+        <classes>
+            <class
+                name="by.rfe.novik.onliner.tests.BikesBrandsTest" />
+        </classes>
+    </test>
+    
+     <test name="Bikes Set Price tests">
+        <classes>
+            <class
+                name="by.rfe.novik.onliner.tests.BikesSetPriceTest" />
+        </classes>
+    </test>
+    
+       <test name="Bikes Titles  tests">
+        <classes>
+            <class
+                name="by.rfe.novik.onliner.tests.BikesTitlesTest" />
+        </classes>
+    </test>
+    
+   
+</suite> 
