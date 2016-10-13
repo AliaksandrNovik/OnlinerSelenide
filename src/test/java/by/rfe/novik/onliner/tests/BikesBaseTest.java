@@ -4,22 +4,20 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.open;
 
-import org.springframework.beans.factory.annotation.Value;
+
 import org.testng.annotations.BeforeClass;
 
-import by.rfe.novik.onliner.screens.MainPage;
-import by.rfe.novik.onliner.screens.catalog.BeautyAndSportPage;
-import by.rfe.novik.onliner.screens.catalog.BikePage;
-import by.rfe.novik.onliner.screens.catalog.CatalogPage;
+import by.rfe.novik.onliner.screens.pages.BikePage;
+import by.rfe.novik.onliner.screens.pages.CatalogPage;
+import by.rfe.novik.onliner.screens.pages.MainPage;
 
 public class BikesBaseTest {
 
-    @Value("$priceForBikesInput")
     protected String priceForBikes;
 
     protected BikePage bikePage;
 
-    @BeforeClass(alwaysRun = true)
+	@BeforeClass(alwaysRun = true)
     public void beforeClass() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe");
         browser = "chrome";
@@ -30,8 +28,8 @@ public class BikesBaseTest {
     private BikePage navigateToBikePage() {
         final MainPage mainPage = open("/", MainPage.class);
         final CatalogPage catalogPage = mainPage.openCatalogPage();
-        final BeautyAndSportPage beautyAndSportPage = catalogPage.openBeautyAndSportLink();
-        return beautyAndSportPage.openBikePage();
+        final BikePage bikePage = catalogPage.openBikePage();
+        return bikePage;
     }
 
 }
