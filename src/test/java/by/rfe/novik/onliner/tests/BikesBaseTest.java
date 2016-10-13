@@ -4,11 +4,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.open;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.beans.factory.annotation.Value;
 import org.testng.annotations.BeforeClass;
 
 import by.rfe.novik.onliner.screens.MainPage;
@@ -16,10 +12,10 @@ import by.rfe.novik.onliner.screens.catalog.BeautyAndSportPage;
 import by.rfe.novik.onliner.screens.catalog.BikePage;
 import by.rfe.novik.onliner.screens.catalog.CatalogPage;
 
-@Configuration
-@ComponentScan(basePackages = { "by.rfe.*" })
-@PropertySource(value = "classpath:api.properties")
 public class BikesBaseTest {
+
+    @Value("$priceForBikesInput")
+    protected String priceForBikes;
 
     protected BikePage bikePage;
 
@@ -36,11 +32,6 @@ public class BikesBaseTest {
         final CatalogPage catalogPage = mainPage.openCatalogPage();
         final BeautyAndSportPage beautyAndSportPage = catalogPage.openBeautyAndSportLink();
         return beautyAndSportPage.openBikePage();
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
-        return new PropertySourcesPlaceholderConfigurer();
     }
 
 }

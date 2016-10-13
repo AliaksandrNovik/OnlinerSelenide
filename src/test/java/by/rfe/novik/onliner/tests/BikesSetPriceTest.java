@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 
 public class BikesSetPriceTest extends BikesBaseTest {
 
-    private static final String priceForBikes = "100 000";
-
     @Test
     public void test03SetPriceAndCheckThatBikesAreNotExistedOnPage() {
         bikePage.setPrice(priceForBikes);
